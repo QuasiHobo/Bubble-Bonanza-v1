@@ -172,7 +172,7 @@ public class GameManager : MonoBehaviour {
 		scoreMultiplierGratsPressed = false;
 
 		currentScoreMultiplier = 1;
-		scoreMultiplierText.text = "x  "+currentScoreMultiplier;
+		scoreMultiplierText.text = "x"+currentScoreMultiplier;
 
 		tutorialScreen.gameObject.SetActive(false);
 		tutorialScreen2.gameObject.SetActive(false);
@@ -752,7 +752,7 @@ public class GameManager : MonoBehaviour {
 			{
 			case ShowResult.Finished:
 				Debug.Log("The ad was successfully shown.");
-				timer += 20f;
+				timer += 10f;
 				break;
 			case ShowResult.Skipped:
 				Debug.Log("The ad was skipped before reaching the end.");
@@ -996,7 +996,7 @@ public class GameManager : MonoBehaviour {
 			{
 				yield return new WaitForSeconds(.6f);
 				currentScoreMultiplier += 1;
-				scoreMultiplierText.text = "x  "+currentScoreMultiplier;
+				scoreMultiplierText.text = "x"+currentScoreMultiplier;
 
 				scoreMultiplierGrats.gameObject.SetActive(true);
 				scoreMultiplierGratsText.text = "Congratulations! \r\n You completed "+everyMultiplierGain+" levels!";
@@ -1050,6 +1050,15 @@ public class GameManager : MonoBehaviour {
 		gameOverButton.gameObject.GetComponent<Animation>().Play();
 
 		yield return new WaitForSeconds (2f);
+
+		int aRandomVal = Random.Range (0, 11);
+
+		if (aRandomVal == 1) {
+			Advertisement.Show ();
+			while (Advertisement.isShowing) {
+				yield return null;
+			}
+		}
 
 		gameOverButton.gameObject.GetComponent<Animation>().Rewind();
 
@@ -1117,7 +1126,7 @@ public class GameManager : MonoBehaviour {
 		}
 
 		currentScoreMultiplier = 1;
-		scoreMultiplierText.text = "x  "+currentScoreMultiplier;
+		scoreMultiplierText.text = "x"+currentScoreMultiplier;
 
 		levelTimer = 0;
 		//Leaderboard stuff
@@ -1146,55 +1155,53 @@ public class GameManager : MonoBehaviour {
 
 		if(currentLevel >= 0 && currentLevel <= 3)
 		{
-			startDifficulty = Random.Range(4, 8);
+			startDifficulty = Random.Range(4, 9);
 			mainDifficulty = Random.Range(20, 32);
 		}
 		if(currentLevel >= 4 && currentLevel <= 10)
 		{
-			startDifficulty = Random.Range(4, 10);
+			startDifficulty = Random.Range(4, 8);
 			mainDifficulty = Random.Range(25, 38);
 		}
 		if(currentLevel >= 11 && currentLevel <= 20)
 		{
-			startDifficulty = Random.Range(4, 8);
-			mainDifficulty = Random.Range(32, 43);
+			startDifficulty = Random.Range(3, 9);
+			mainDifficulty = Random.Range(33, 43);
 		}
 		if(currentLevel >= 21 && currentLevel <= 30)
 		{
-			startDifficulty = Random.Range(4, 8);
-			mainDifficulty = Random.Range(34, 49);
+			startDifficulty = Random.Range(3, 8);
+			mainDifficulty = Random.Range(35, 51);
 		}
 		if(currentLevel >= 31 && currentLevel <= 40)
 		{
-			startDifficulty = Random.Range(4, 7);
-			mainDifficulty = Random.Range(34, 52);
+			startDifficulty = Random.Range(3, 7);
+			mainDifficulty = Random.Range(35, 53);
 		}
 		if(currentLevel >= 41 && currentLevel <= 60)
 		{
-			startDifficulty = Random.Range(3, 7);
-			mainDifficulty = Random.Range(34, 57);
+			startDifficulty = Random.Range(2, 7);
+			mainDifficulty = Random.Range(35, 54);
 		}
 		if(currentLevel >= 61 && currentLevel < 100)
 		{
-			startDifficulty = Random.Range(3, 6);
-			mainDifficulty = Random.Range(35, 63);
+			startDifficulty = Random.Range(2, 6);
+			mainDifficulty = Random.Range(35, 65);
 		}
-		if(currentLevel > 100)
+		if(currentLevel > 50)
 		{
-			purplePossibility = 10;
-			startDifficulty = Random.Range(3, 6);
-			mainDifficulty = Random.Range(36, 70);
+			purplePossibility = 12;
 		}
 
 		// Bonus levels:
 		if(currentLevel >= 45)
 		{
-			int newRandom = Random.Range(1, 26);
+			int newRandom = Random.Range(1, 19);
 			if(newRandom == 1)
 			{
-				purplePossibility = 12;
-				startDifficulty = Random.Range(8, 14);
-				mainDifficulty = Random.Range(16, 50);
+				purplePossibility = 15;
+				startDifficulty = Random.Range(4, 14);
+				mainDifficulty = Random.Range(18, 55);
 			}
 		}
 
@@ -1255,7 +1262,7 @@ public class GameManager : MonoBehaviour {
 		{
 			yield return new WaitForSeconds(.25f);
 			currentScoreMultiplier += 1;
-			scoreMultiplierText.text = "x  "+currentScoreMultiplier;
+			scoreMultiplierText.text = "x"+currentScoreMultiplier;
 		}
 
 		yield return null;

@@ -1,0 +1,35 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{DE81D4EB-E180-CF14-A31B-2734DAE36051}") = "BubbleBonanza", "Assembly-CSharp-firstpass.csproj", "{8AE9B2AF-89CB-285B-7521-8143BF105D7F}"
+EndProject
+Project("{DE81D4EB-E180-CF14-A31B-2734DAE36051}") = "BubbleBonanza", "Assembly-CSharp.csproj", "{0974941D-5EC0-D9EA-86D7-3DD279DCD175}"
+EndProject
+Project("{DE81D4EB-E180-CF14-A31B-2734DAE36051}") = "BubbleBonanza", "Assembly-CSharp-Editor.csproj", "{89662DAB-49C7-44C4-E7C6-9ED42C215F54}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8AE9B2AF-89CB-285B-7521-8143BF105D7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AE9B2AF-89CB-285B-7521-8143BF105D7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AE9B2AF-89CB-285B-7521-8143BF105D7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AE9B2AF-89CB-285B-7521-8143BF105D7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0974941D-5EC0-D9EA-86D7-3DD279DCD175}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0974941D-5EC0-D9EA-86D7-3DD279DCD175}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0974941D-5EC0-D9EA-86D7-3DD279DCD175}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0974941D-5EC0-D9EA-86D7-3DD279DCD175}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89662DAB-49C7-44C4-E7C6-9ED42C215F54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89662DAB-49C7-44C4-E7C6-9ED42C215F54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89662DAB-49C7-44C4-E7C6-9ED42C215F54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89662DAB-49C7-44C4-E7C6-9ED42C215F54}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
