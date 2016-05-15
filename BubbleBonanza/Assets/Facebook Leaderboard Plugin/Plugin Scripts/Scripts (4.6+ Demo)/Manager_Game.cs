@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 // ---------Manager_Game----------
 
@@ -110,7 +111,10 @@ public class Manager_Game : MonoBehaviour
 
 	void Update()
 	{
-		score = Mathf.RoundToInt(GameManager.instance.playerScore);
+		if (SceneManager.GetActiveScene ().buildIndex == 1) 
+		{
+			score = Mathf.RoundToInt (GameManager.instance.playerScore);
+		}
 	}
 
 		// Continue from above:

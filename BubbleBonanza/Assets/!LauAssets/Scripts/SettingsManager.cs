@@ -9,6 +9,7 @@ public class SettingsManager : MonoBehaviour {
 	public Button areYouSureNO; 
 	public Button startGameButton;
 	public Button rulesButton;
+	public Image background;
 
 	// Use this for initialization
 	void Start () 
@@ -20,12 +21,14 @@ public class SettingsManager : MonoBehaviour {
 
 		areYouSureYes.gameObject.SetActive(false);
 		areYouSureNO.gameObject.SetActive(false);
+		background.gameObject.SetActive (false);
 	}
 
 	public void quitPressed()
 	{
 		areYouSureYes.gameObject.SetActive(true);
 		areYouSureNO.gameObject.SetActive(true);
+		background.gameObject.SetActive (true);
 
 		if(startGameButton != null)
 		{
@@ -40,6 +43,7 @@ public class SettingsManager : MonoBehaviour {
 	{
 		areYouSureYes.gameObject.SetActive(false);
 		areYouSureNO.gameObject.SetActive(false);
+		background.gameObject.SetActive (false);
 
 		if(startGameButton != null)
 		startGameButton.gameObject.SetActive(true);

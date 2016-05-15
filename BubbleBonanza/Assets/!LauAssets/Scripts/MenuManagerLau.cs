@@ -7,6 +7,7 @@ public class MenuManagerLau : MonoBehaviour {
 	public Button hintEnableButton;
 	public Button hintDisableButton;
 	public Button rulesButton;
+	public GameObject leaderBoard;
 
 	public int hintsEnabled = 0;
 
@@ -14,7 +15,7 @@ public class MenuManagerLau : MonoBehaviour {
 	void Start () 
 	{
 		hintsEnabled = PlayerPrefs.GetInt("HintsCheck");
-
+		leaderBoard.gameObject.SetActive (false);
 		if(hintsEnabled == 0)
 		{
 			hintEnableButton.gameObject.SetActive(true);
@@ -57,4 +58,15 @@ public class MenuManagerLau : MonoBehaviour {
 		Application.LoadLevel(2);
 	}
 
+	public void LeaderBoardButtonPressed()
+	{
+		leaderBoard.gameObject.SetActive (true);
+	}
+
+	public void LeaderBoardQuit()
+	{
+		leaderBoard.gameObject.SetActive (false);
+	}
+
 }
+
