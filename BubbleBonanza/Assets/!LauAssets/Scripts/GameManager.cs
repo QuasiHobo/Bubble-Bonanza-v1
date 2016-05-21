@@ -213,7 +213,7 @@ public class GameManager : MonoBehaviour {
 			timeGainBonusButton.gameObject.GetComponent<Animation>().Stop();
 		}
 
-		currentHighScore.text = "Current Highscore: "+PlayerPrefs.GetFloat("highscore", 0);
+		currentHighScore.text = ""+PlayerPrefs.GetFloat("highscore", 0);
 		PlayerPrefs.Save();
 
 		newHighScorePressed = false;
@@ -235,21 +235,21 @@ public class GameManager : MonoBehaviour {
 		scorePenalty = Resources.Load("ParticleSystems/ScorePenalty", typeof(ParticleSystem)) as ParticleSystem;
 
 		levelTimer = 0;
-		timeBonusText.text = "Time Penalty: "+Mathf.Round(levelTimer);
+		timeBonusText.text = "-"+Mathf.Round(levelTimer);
 
 		nextLevelButton.gameObject.SetActive(false);
 		newGameButton.gameObject.SetActive(false);
 		rewardButton.gameObject.SetActive(false);
 
 		currentLevel = 0;
-		levelsCompleted.text = "Levels Completed: "+currentLevel;
+		levelsCompleted.text = "Level: "+currentLevel;
 
 		bubblesLeft = 0;
 		playerScore = 0.0f;
 		scoreText.text = ""+playerScore;
 
 		timer = baseTime;
-		timerText.text = "Time Left: "+timer;
+		timerText.text = ""+timer;
 
 		firstRunOfGame = 0;
 		StartCoroutine("InitGridUnits");
@@ -608,7 +608,7 @@ public class GameManager : MonoBehaviour {
 				StartCoroutine(GameIsOver(wonLevel));
 			}
 
-			timerText.text = "Time Left: "+Mathf.Round(timer);
+			timerText.text = ""+Mathf.Round(timer);
 
 			yield return null;
 		}
@@ -1078,7 +1078,7 @@ public class GameManager : MonoBehaviour {
 			Debug.Log("HIGHSCORRRREEEED!!!");
 			PlayerPrefs.SetFloat("highscore", Mathf.Round(playerScore));
 			PlayerPrefs.Save(); 
-			currentHighScore.text = "Current Highscore: "+PlayerPrefs.GetFloat("highscore");
+			currentHighScore.text = ""+PlayerPrefs.GetFloat("highscore");
 			newHighScoreGrats.gameObject.SetActive(true);
 			newHighScoreEffect.gameObject.SetActive(true);
 			newHighScoreEffect.enableEmission = true;
@@ -1205,7 +1205,7 @@ public class GameManager : MonoBehaviour {
 			}
 		}
 
-		levelsCompleted.text = "Levels Completed: "+currentLevel;
+		levelsCompleted.text = "Level: "+currentLevel;
 		levelCreated = false;
 		StartCoroutine("InitGridUnits");
 	}
@@ -1220,7 +1220,7 @@ public class GameManager : MonoBehaviour {
 		startDifficulty = savedStartDif;
 		mainDifficulty = savedMainDif;
 
-		levelsCompleted.text = "Levels Completed: "+currentLevel;
+		levelsCompleted.text = "Level: "+currentLevel;
 		newGameButton.gameObject.SetActive(false);
 		timer = baseTime;
 		levelCreated = false;
@@ -1278,8 +1278,8 @@ public class GameManager : MonoBehaviour {
 
 		scoreText.text = " "+Mathf.Round(playerScore);
 
-		timerText.text = "Time Left: "+Mathf.Round(timer);
-		timeBonusText.text = "Time Penalty: "+Mathf.Round(levelTimer);
+		timerText.text = ""+Mathf.Round(timer);
+		timeBonusText.text = "-"+Mathf.Round(levelTimer);
 
 		if(!isSpawning && !levelCreated && !gamePlaying)
 		{
